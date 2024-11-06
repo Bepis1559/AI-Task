@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --whiteTheme: #f5f5f5;
+  --darkTheme: rgb(27, 27, 27);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+textarea,
+button,
+select {
+  font: inherit;
+}
+*:not(dialog) {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+body {
+  background: var(--whiteTheme);
+  color: var(--darkTheme);
+  font-size: clamp(1rem, 1rem + 0.55vw, 1.5rem);
+  font-family: "Roboto", sans-serif;
+}
+h1 h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p,
+li,
+figcaption {
+  max-width: 65ch;
+  text-wrap: pretty;
+}
+
+h1 {
+  font-size: clamp(1.3rem, 1.5rem + 1.5vw, 2rem);
+}
+h2 {
+  font-size: clamp(1.2rem, 1.25rem + 1vw, 1.7rem);
+}
+h3 {
+  font-size: clamp(1.1rem, 1.15rem + 0.7vw, 1.45rem);
+}
+/* =============================== */
