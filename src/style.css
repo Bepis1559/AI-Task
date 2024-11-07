@@ -31,7 +31,7 @@ body {
   background: var(--darkTheme);
   user-select: none;
   color: var(--whiteTheme);
-  font-size: clamp(1rem, 1rem + 0.55vw, 1.3rem);
+  font-size: clamp(1rem, 1rem + 0.55vw, 1.35rem);
   font-family: "Roboto", sans-serif;
 }
 h1 h1,
@@ -71,6 +71,7 @@ main {
 }
 
 .claims {
+  text-align: center;
   #true {
     color: var(--brighterTrueColor);
   }
@@ -79,8 +80,6 @@ main {
   }
 
   h1 {
-    text-align: center;
-
     &::before {
       content: url("/assets/spellbook.png");
       margin-inline-end: 0.3em;
@@ -88,6 +87,7 @@ main {
   }
 
   > div {
+    text-align: initial;
     padding: 0.5em 1em;
     margin-block: 1em;
     background-color: #1d1d1d;
@@ -111,6 +111,30 @@ main {
       div {
         margin-block-start: 0.2em;
       }
+    }
+  }
+
+  button {
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    color: inherit;
+    font-weight: bold;
+    background-image: linear-gradient(
+      to right,
+      rgb(68, 68, 68),
+      rgb(19, 19, 19),
+      rgb(0, 0, 116)
+    );
+    cursor: pointer;
+    margin-block-start: 1em;
+    border: 1px solid transparent;
+    transition: border-color 0.5s, background-position 2s;
+    background-size: 250%;
+    background-position: center;
+
+    &:hover {
+      border-color: #646cff;
+      background-position: right center;
     }
   }
 }
