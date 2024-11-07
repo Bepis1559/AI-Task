@@ -28,9 +28,10 @@ select {
   font: inherit;
 }
 body {
-  background: var(--whiteTheme);
-  color: var(--darkTheme);
-  font-size: clamp(1rem, 1rem + 0.55vw, 1.5rem);
+  background: var(--darkTheme);
+  user-select: none;
+  color: var(--whiteTheme);
+  font-size: clamp(1rem, 1rem + 0.55vw, 1.3rem);
   font-family: "Roboto", sans-serif;
 }
 h1 h1,
@@ -48,14 +49,97 @@ figcaption {
   max-width: 65ch;
   text-wrap: pretty;
 }
-
 h1 {
   font-size: clamp(1.3rem, 1.5rem + 1.5vw, 2rem);
 }
 h2 {
   font-size: clamp(1.2rem, 1.25rem + 1vw, 1.7rem);
 }
-h3 {
-  font-size: clamp(1.1rem, 1.15rem + 0.7vw, 1.45rem);
-}
+
 /* =============================== */
+
+main {
+  --brighterTrueColor: rgb(0, 255, 0);
+  --brighterFalseColor: red;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  min-height: 100dvb;
+  place-content: center;
+  place-items: center;
+  padding: 1em 2em;
+  gap: 2em;
+}
+
+.claims {
+  #true {
+    color: var(--brighterTrueColor);
+  }
+  #false {
+    color: var(--brighterFalseColor);
+  }
+
+  h1 {
+    text-align: center;
+
+    &::before {
+      content: url("/assets/spellbook.png");
+      margin-inline-end: 0.3em;
+    }
+  }
+
+  > div {
+    padding: 0.5em 1em;
+    margin-block: 1em;
+    background-color: #1d1d1d;
+    border-radius: 12px;
+    box-shadow: 10px 10px 10px #141414;
+
+    h2 {
+      margin-block: 0.5em;
+
+      &::before {
+        content: url("/assets/wizard.png");
+        margin-inline-end: 0.2em;
+      }
+    }
+
+    li {
+      list-style-position: inside;
+      list-style-image: url("/assets/elixir.png");
+      margin-block: 1em;
+
+      div {
+        margin-block-start: 0.2em;
+      }
+    }
+  }
+}
+
+.options {
+  font-size: clamp(1.1rem, 1.15rem + 0.7vw, 1.45rem);
+  width: min(17em, 100%);
+  text-align: center;
+  div {
+    color: rgb(238, 56, 110);
+    background: rgb(49, 49, 49);
+    padding-block: 0.75em;
+    box-shadow: 5px 5px 5px #131313;
+    border: 1px solid transparent;
+    transition: border-color 0.5s, color 0.5s;
+    border-radius: 15px;
+    &:first-of-type {
+      margin-block-end: 1em;
+      color: rgb(28, 201, 28);
+
+      &:hover {
+        color: var(--brighterTrueColor);
+      }
+    }
+    &:nth-of-type(2):hover {
+      color: var(--brighterFalseColor);
+    }
+    &:hover {
+      border-color: #646cff;
+    }
+  }
+}
