@@ -1,6 +1,7 @@
 import { getClonedElement } from "./utils/getClonedElement";
 import { getTransferData } from "./utils/getTransferData";
 import { handleAppendingElementsToClaims } from "./utils/handleAppendingElementsToClaims";
+import { handleSubmitButton } from "./utils/handleSubmitButton";
 
 const options: HTMLDivElement[] = Array.from(
   document.querySelectorAll(".options > div"),
@@ -8,6 +9,10 @@ const options: HTMLDivElement[] = Array.from(
 const claims: HTMLElement[] = Array.from(
   document.querySelectorAll(".claims li"),
 );
+const submitButton: HTMLButtonElement = document.querySelector(
+  `.claims > button[type=submit]`,
+)!;
+submitButton.addEventListener("click", (e) => handleSubmitButton(e));
 
 options.forEach((options) => {
   options.addEventListener("dragstart", (e) => {
