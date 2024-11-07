@@ -3,8 +3,6 @@ export function handleAppendingElementsToClaims(
   claim: HTMLElement,
 ) {
   clonedElement.classList.add("cloned");
-
-  console.log(clonedElement);
   if (!claim.querySelector("[draggable]")) {
     claim.appendChild(clonedElement);
   } else {

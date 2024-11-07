@@ -12,7 +12,10 @@ const claims: HTMLElement[] = Array.from(
 const submitButton: HTMLButtonElement = document.querySelector(
   `.claims > button[type=submit]`,
 )!;
-submitButton.addEventListener("click", (e) => handleSubmitButton(e));
+const result: HTMLParagraphElement = document.querySelector(`.result`)!;
+submitButton.addEventListener("click", (e) =>
+  handleSubmitButton(e, claims, result),
+);
 
 options.forEach((options) => {
   options.addEventListener("dragstart", (e) => {

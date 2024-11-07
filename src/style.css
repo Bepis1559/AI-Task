@@ -66,7 +66,7 @@ main {
   min-height: 100dvb;
   place-content: center;
   place-items: center;
-  padding: 1em 2em;
+  padding: 0.75em 1.5em;
   gap: 2em;
 }
 
@@ -166,5 +166,15 @@ main {
     &:hover {
       border-color: #646cff;
     }
+  }
+}
+
+.result {
+  margin-block-start: 1.5em;
+  &.error {
+    color: rgb(223, 55, 119);
+  }
+  &.success {
+    color: var(--brighterTrueColor);
   }
 }
