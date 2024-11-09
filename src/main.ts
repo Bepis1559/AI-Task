@@ -16,7 +16,7 @@ const resetButton: HTMLButtonElement = document.querySelector(
   `.claims  button[type=reset]`,
 )!;
 const result: HTMLParagraphElement = document.querySelector(`.result`)!;
-resetButton.addEventListener("click", (e) => handleReset(e, claims));
+resetButton.addEventListener("click", (e) => handleReset(e, claims, result));
 submitButton.addEventListener("click", (e) => handleSubmit(e, claims, result));
 
 options.forEach((option) => {
