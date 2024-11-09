@@ -58,6 +58,31 @@ h2 {
 
 /* =============================== */
 
+.rulesContainer {
+  position: absolute;
+  max-width: 8em;
+  margin: 0.5em;
+  pointer-events: none;
+  color: rgb(192, 192, 192);
+  &:after {
+    content: "One tells the truth in both claims. One is lying on both counts. One has a true and a false statement. Determine which wizard possesses the elixir of immortality.";
+    transition: opacity 1s;
+    opacity: 0;
+  }
+  &:is(:hover, :focus-visible)::after {
+    opacity: 1;
+  }
+  img {
+    float: left;
+    height: 2.5em;
+    pointer-events: auto;
+  }
+}
+@media (width < 800px) {
+  .rulesContainer {
+    display: none;
+  }
+}
 main {
   --brighterTrueColor: rgb(0, 255, 0);
   --brighterFalseColor: red;
