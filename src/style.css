@@ -88,13 +88,6 @@ main {
     flex-wrap: wrap;
   }
 
-  /* h1 {
-    &::after {
-      content: url("/assets/spellbook.png");
-      margin-inline-start: 0.7em;
-    }
-  } */
-
   > div:has(ul) {
     text-align: initial;
     padding: 0.5em 1em;
