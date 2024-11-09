@@ -31,7 +31,7 @@ body {
   background: var(--darkTheme);
   user-select: none;
   color: var(--whiteTheme);
-  font-size: clamp(1rem, 1rem + 0.55vw, 1.35rem);
+  font-size: clamp(1rem, 1rem + 0.55vw, 1.3rem);
   font-family: "Roboto", sans-serif;
 }
 h1 h1,
@@ -80,14 +80,22 @@ main {
     color: var(--brighterFalseColor);
   }
 
-  h1 {
-    &::before {
-      content: url("/assets/spellbook.png");
-      margin-inline-end: 0.3em;
-    }
+  div:has(h1) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7em;
+    flex-wrap: wrap;
   }
 
-  > div:not(:last-of-type) {
+  /* h1 {
+    &::after {
+      content: url("/assets/spellbook.png");
+      margin-inline-start: 0.7em;
+    }
+  } */
+
+  > div:has(ul) {
     text-align: initial;
     padding: 0.5em 1em;
     margin-block: 1em;
