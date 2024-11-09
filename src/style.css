@@ -62,7 +62,7 @@ main {
   --brighterTrueColor: rgb(0, 255, 0);
   --brighterFalseColor: red;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(19em, 100%), 1fr));
   min-height: 100dvb;
   place-content: center;
   place-items: center;
@@ -86,7 +86,7 @@ main {
     }
   }
 
-  > div {
+  > div:not(:last-of-type) {
     text-align: initial;
     padding: 0.5em 1em;
     margin-block: 1em;
@@ -114,9 +114,10 @@ main {
     }
   }
 
-  button[type="submit"] {
+  button:is([type="submit"], [type="reset"]) {
     padding: 0.5em 1em;
     border-radius: 10px;
+    outline: none;
     color: inherit;
     font-weight: bold;
     box-shadow: 8px 8px 2px #181818;
@@ -127,15 +128,25 @@ main {
     );
     cursor: pointer;
     margin-block-start: 1em;
-    border: 1px solid var(--darkTheme);
+    border: 0.05em solid transparent;
     transition: border-color 1s, background-position 3s;
     background-size: 250%;
     background-position: center;
 
-    &:hover {
+    &:is(:hover, :focus-visible) {
       border-color: #064f8b;
       background-position: right 0%;
     }
+    &[type="reset"]:is(:hover, :focus-visible) {
+      border-color: #dd236b;
+    }
+  }
+
+  div:last-of-type {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 6em;
   }
 }
 
