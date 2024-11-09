@@ -1,7 +1,6 @@
 import { getClonedElement } from "./utils/getClonedElement";
-import { getTransferData } from "./utils/getTransferData";
-import { handleAppendingElementsToClaims } from "./utils/handleAppendingElementsToClaims";
-import { handleSubmitButton } from "./utils/handleSubmitButton";
+import { appendOptionsToClaims } from "./utils/handleAppendingElementsToClaims";
+import { handleSubmit } from "./utils/handleSubmitButton";
 
 const options: HTMLDivElement[] = Array.from(
   document.querySelectorAll(".options > div"),
@@ -13,14 +12,11 @@ const submitButton: HTMLButtonElement = document.querySelector(
   `.claims > button[type=submit]`,
 )!;
 const result: HTMLParagraphElement = document.querySelector(`.result`)!;
-submitButton.addEventListener("click", (e) =>
-  handleSubmitButton(e, claims, result),
-);
+submitButton.addEventListener("click", (e) => handleSubmit(e, claims, result));
 
 options.forEach((option) => {
   option.addEventListener("dragstart", (e) => {
-    const target = e.target as HTMLElement;
-    e.dataTransfer?.setData("text/plain", target.id);
+    e.dataTransfer?.setData("text/plain", (e.target as HTMLElement).id);
   });
 });
 
@@ -33,8 +29,8 @@ claims.forEach((claim) => {
 claims.forEach((claim) => {
   claim.addEventListener("drop", (e) => {
     e.preventDefault();
-    const data = getTransferData(e);
+    const data = e.dataTransfer?.getData("text/plain");
     const clonedElement = getClonedElement(data!);
-    handleAppendingElementsToClaims(clonedElement, claim);
+    appendOptionsToClaims(clonedElement, claim);
   });
 });

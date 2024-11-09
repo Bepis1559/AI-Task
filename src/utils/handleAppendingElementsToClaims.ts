@@ -1,4 +1,4 @@
-export function handleAppendingElementsToClaims(
+export function appendOptionsToClaims(
   clonedElement: HTMLElement,
   claim: HTMLElement,
 ) {

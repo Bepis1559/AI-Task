@@ -127,14 +127,14 @@ main {
     );
     cursor: pointer;
     margin-block-start: 1em;
-    border: 1px solid transparent;
-    transition: border-color 0.5s, background-position 2s;
+    border: 1px solid var(--darkTheme);
+    transition: border-color 1s, background-position 3s;
     background-size: 250%;
     background-position: center;
 
     &:hover {
-      border-color: #d6d6d6;
-      background-position: right center;
+      border-color: #064f8b;
+      background-position: right 0%;
     }
   }
 }
