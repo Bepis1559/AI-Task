@@ -60,7 +60,7 @@ h2 {
 
 .rulesContainer {
   position: absolute;
-  max-width: 8em;
+  width: calc(5em + 8vw);
   margin: 0.5em;
   pointer-events: none;
   color: rgb(192, 192, 192);
