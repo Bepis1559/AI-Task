@@ -17,12 +17,10 @@ submitButton.addEventListener("click", (e) =>
   handleSubmitButton(e, claims, result),
 );
 
-options.forEach((options) => {
-  options.addEventListener("dragstart", (e) => {
+options.forEach((option) => {
+  option.addEventListener("dragstart", (e) => {
     const target = e.target as HTMLElement;
-    if (target) {
-      e.dataTransfer?.setData("text/plain", target.id);
-    }
+    e.dataTransfer?.setData("text/plain", target.id);
   });
 });
 
