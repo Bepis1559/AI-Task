@@ -187,7 +187,7 @@ main {
 }
 
 .options {
-  padding-block: 2.5em;
+  padding-block-start: 2.5em;
   position: relative;
   font-size: clamp(1.1rem, 1.15rem + 0.7vw, 1.45rem);
   width: min(17em, 100%);
