@@ -86,7 +86,6 @@ h2 {
 main {
   --brighterTrueColor: rgb(0, 255, 0);
   --brighterFalseColor: red;
-  --verticalPadding: 1em;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(18em, 100%), 1fr));
   padding: 1em;
