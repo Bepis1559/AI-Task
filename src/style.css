@@ -89,15 +89,15 @@ main {
   --verticalPadding: 1em;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(18em, 100%), 1fr));
+  padding: var(--verticalPadding) calc(var(--verticalPadding) * 2);
   min-height: 100dvb;
   place-content: center;
   place-items: center;
-  padding: var(--verticalPadding) calc(var(--verticalPadding) * 2);
   gap: 2em;
 }
 
 .claims {
-  text-align: center;
+  position: relative;
   #true {
     color: var(--brighterTrueColor);
   }
@@ -175,6 +175,16 @@ main {
     flex-wrap: wrap;
     column-gap: 6em;
   }
+
+  .cloned {
+    display: none;
+  }
+  li:has(.cloned#true) {
+    color: rgb(21, 231, 21);
+  }
+  li:has(.cloned#false) {
+    color: red;
+  }
 }
 
 .options {
@@ -207,9 +217,14 @@ main {
 }
 
 .result {
-  margin-block-start: 1.5em;
+  margin-block: 2em;
+  position: absolute;
+  font-weight: bolder;
+  width: 100%;
+  text-align: center;
+
   &.error {
-    color: rgb(223, 55, 119);
+    color: rgb(235, 27, 27);
   }
   &.success {
     color: var(--brighterTrueColor);
