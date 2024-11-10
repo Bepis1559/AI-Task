@@ -67,7 +67,7 @@ function handleWinningConditions(
       }
     });
     if (finalOutcome) {
-      setFinalState(result, "Congrats , you've made it !", "success");
+      setFinalState(result, "Yup , A has it !", "success");
     } else {
       setFinalState(result, "That's not it , try again !");
     }
