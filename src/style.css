@@ -97,6 +97,7 @@ main {
 
 .claims {
   position: relative;
+  padding-block-end: 2em;
   #true {
     color: var(--brighterTrueColor);
   }
