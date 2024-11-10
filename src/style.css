@@ -89,7 +89,7 @@ main {
   --verticalPadding: 1em;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(18em, 100%), 1fr));
-  padding: var(--verticalPadding) calc(var(--verticalPadding) * 2);
+  padding: 1em;
   min-height: 100dvb;
   place-content: center;
   place-items: center;
