@@ -134,7 +134,7 @@ main {
       list-style-position: inside;
       list-style-image: url("/assets/elixir.png");
       margin-block: 1em;
-
+      transition: color 0.75s;
       div {
         margin-block-start: 0.2em;
       }
